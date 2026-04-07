@@ -1,0 +1,17 @@
+# config/settings.yaml
+
+paths:
+  raw_data_folder: "data/01_raw/neodataset/csv"
+  processed_data: "data/02_processed/neodataset_limpio.parquet"
+  scored_data: "data/02_processed/neodataset_scored.parquet"
+  embeddings: "data/03_embeddings/neodataset_sebert.npy"
+  model_save_path: "models/lightgbm_pbi_model.pkl"
+
+llm_router:
+  model_name: "gpt-4o-mini"
+  temperature: 0.0
+  batch_save_interval: 500  # Cada cuántas iteraciones guardar el checkpoint
+
+vectorizer:
+  model_name: "thearod5/se-bert"
+  batch_size: 32
