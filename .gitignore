@@ -1,0 +1,11 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Carpetas de distribución/construcción (opcional pero recomendado)
+build/
+dist/
+*.egg-info/
+venv/
