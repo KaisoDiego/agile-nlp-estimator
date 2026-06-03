@@ -1,11 +1,18 @@
-# 🧠 Agile NLP Estimator: AI-Driven Story Point Prediction
+# 🧠 Agile NLP Assessor: AI-Driven Story Point & Quality Gatekeeper
 
-A production-ready Natural Language Processing pipeline designed to eliminate human bias and latency in Agile software development estimation. 
+A production-ready Natural Language Processing pipeline designed to augment Agile sprint planning. It acts as an objective baseline vote during Planning Poker and enforces quality standards for User Story drafting.
 
-This engine ingests raw Jira/Linear ticket descriptions and predicts structural complexity (Story Points) using state-of-the-art text embeddings and gradient boosting.
+This engine ingests raw Jira/Linear ticket descriptions and predicts structural complexity using state-of-the-art text embeddings (SBERT) and gradient boosting (LightGBM).
 
-### 🏢 The Business Problem
-Manual sprint planning is a high-latency process prone to psychological bias (anchoring, optimism). Poor estimation destroys burn rates and startup runways. This architecture automates the baseline estimation, allowing engineering leaders to focus on system design rather than administrative guessing.
+### 🏢 The Business Problem (Friction & Bias)
+1. **The Anchoring Bias:** Manual estimation is highly susceptible to the first spoken number in a room.
+2. **Garbage-In, Garbage-Out:** Poorly drafted User Stories lead to misaligned engineering execution and blown budgets.
+
+### 🎯 The Architectural Solution
+This system **does not replace human consensus**; it enhances it by providing:
+- **An Objective "Vote":** A mathematically derived Story Point estimate that serves as an unbiased baseline at the Planning Poker table.
+- **Justified Complexity:** Feature importance mapping to highlight *why* a ticket is complex.
+- **Drafting Feedback:** Identifies ambiguities in the User Story (HU) text *before* it reaches the engineering team, enforcing high redaction standards.
 
 ### ⚙️ System Architecture & Stack
 
@@ -14,10 +21,13 @@ Manual sprint planning is a high-latency process prone to psychological bias (an
 - **Language:** `Python 3.10+`
 
 ### 📊 Architecture Flow
-*(Nota interna: Cuando subas el código, aquí debes habilitar el renderizado de este diagrama)*
 ```mermaid
 graph TD
-    A[Raw Ticket / User Story] --> B(Text Preprocessing)
-    B --> C{SBERT Model}
-    C -->|768-dim Vector| D[LightGBM Predictor]
-    D --> E[Predicted Story Points]
+    A[Raw User Story Draft] --> B(Text Preprocessing & NLP)
+    B --> C{SBERT Embeddings}
+    C --> D[LightGBM Predictor]
+    C --> E[Ambiguity/Quality Filter]
+    D --> F[Objective SP Vote + Justification]
+    E --> G[Redaction Improvement Suggestions]
+    F --> H((Planning Poker Integration))
+    G --> H
