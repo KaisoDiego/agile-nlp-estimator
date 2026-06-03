@@ -6,9 +6,8 @@ import pandas as pd
 from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel, Field
-from prompts import SYSTEM_PROMPT_JUDGE
 import time
-
+from prompts import SYSTEM_PROMPT_BATCH_JUDGE
 # --- NUEVOS IMPORTS DE RICH ---
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn, TimeElapsedColumn, TimeRemainingColumn
@@ -29,14 +28,12 @@ class QualityEvaluation(BaseModel):
     pbi_type: str = Field(..., description="Clasificación estricta: 'User Story', 'Technical Task', 'Bug', o 'Spike'")
     hu_q_score: float = Field(..., ge=1.0, le=5.0, description="Nota de calidad (1.0 a 5.0)")
     defect_reasoning: str = Field(..., description="Justificación técnica corta de la nota y clasificación")
-    is_atomic: bool = Field(..., description="¿Es una sola unidad de trabajo?")
-
 def evaluate_pbi(text: str, model_name: str, temperature: float) -> QualityEvaluation:
     """Envía el texto a OpenAI y fuerza una respuesta estructurada (JSON)."""
     response = client.beta.chat.completions.parse(
         model=model_name,
         messages=[
-            {"role": "system", "content": SYSTEM_PROMPT_JUDGE},
+            {"role": "system", "content": SYSTEM_PROMPT_BATCH_JUDGE},
             {"role": "user", "content": f"Evalúa este PBI:\n{text}"}
         ],
         temperature=temperature,
@@ -125,7 +122,6 @@ def main():
                 df.at[index, "pbi_type"] = resultado.pbi_type
                 df.at[index, "hu_q_score"] = resultado.hu_q_score
                 df.at[index, "defect_reasoning"] = resultado.defect_reasoning
-                df.at[index, "is_atomic"] = resultado.is_atomic
                 
                 # Imprimir el log de éxito *por encima* de la barra de progreso
                 color_tipo = "green" if resultado.pbi_type == "User Story" else "blue" if resultado.pbi_type == "Technical Task" else "red" if resultado.pbi_type == "Bug" else "magenta"
