@@ -36,6 +36,6 @@ graph TD
     E --> G[Redaction Improvement Suggestions]
     F --> H((Planning Poker Integration))
     G --> H
-
+```
 ---
 📫 **Contact for B2B / Remote W-8BEN opportunities:** [diego.acevedok@gmail.com](mailto:diego.acevedok@gmail.com) | [LinkedIn](https://www.linkedin.com/in/diego-ignacio-acevedo-pizarro/)
