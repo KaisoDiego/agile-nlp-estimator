@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🚀 Agile PBI Tutor: MLOps & NLP for Story Point Estimation
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
