@@ -36,3 +36,5 @@ graph TD
     E --> G[Redaction Improvement Suggestions]
     F --> H((Planning Poker Integration))
     G --> H
+```
+### Architect: Diego Acevedo Pizarro | AI & Backend Architecture Consultant
