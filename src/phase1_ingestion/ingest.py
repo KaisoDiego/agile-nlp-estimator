@@ -70,6 +70,7 @@ def main():
     # Eliminar filas sin Story Points o con texto vacío
     filas_antes = len(df)
     df.dropna(subset=['user_story', 'target'], inplace=True)
+    df.drop_duplicates(subset=['user_story'], keep='first', inplace=True)
     df = df[df['user_story'].str.strip() != "-"] # Filtrar si solo quedó el guión
     df = df[df['user_story'].str.strip() != ""]
     filas_despues = len(df)
