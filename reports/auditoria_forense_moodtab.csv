@@ -1,0 +1,68 @@
+﻿Ticket_ID,Titulo,Texto_Completo,Q_Score_DoR,Tipo_Detectado,SP_Empirico_Historico,SP_Inferencia_IA,Justificacion_IA,Desviacion_SP
+1,Self-assessment form...,"Self-assessment form
+Historia: As a psychiatrist, I want patients to have a basic self-assessment form in case they want to preview their condition for the psychiatrist.
+Criterios de Aceptación: 1. Given a patient, they can view the self-assessment form and complete it without problems.
+2. Given a psychiatrist, in the patient's detailed view on the website, they can see the responses to the self-assessment form.
+3. Given a psychiatrist at the time of creating the patient's account, the patient will automatically be assigned a self-assessment form.",4.0,User Story,3.0,5,"La historia de usuario está bien definida y proporciona un valor claro al usuario final (pacientes y psiquiatras). Los criterios de aceptación son claros y estimables, aunque podrían beneficiarse de una mayor especificidad en cuanto a la interfaz y la experiencia del usuario. No se mencionan riesgos o consideraciones adicionales, lo que impide alcanzar una calificación más alta.",-2.0
+2,Monitoring schedule...,"Monitoring schedule
+Historia: As a user, I want to have a calendar that summarizes the data entered over a specific period of time so I can track my progress day by day.
+Criterios de Aceptación: 1. Given a patient in the diary view, they can see the records of the emotional diaries.
+2. Given a patient in the diary view, they can select whether to view the emotional diaries for the week, month, or another convenient format.
+3. The patient or psychiatrist can export the calendar records in PDF or CSV format for personal review or to share with their psychiatrist.",4.0,User Story,6.0,5,"La historia de usuario está bien definida y proporciona un valor claro al usuario final al permitirle rastrear su progreso. Los criterios de aceptación son claros y estimables, aunque podrían beneficiarse de una mayor especificidad en cuanto a la interfaz y la interacción del usuario. No hay omisiones significativas, pero se podría mejorar la claridad sobre el formato de los datos exportados.",1.0
+3,Daily advice for the patient...,"Daily advice for the patient
+Historia: As a patient, I would like to receive advice from the app so that I can slightly improve my emotional state.
+Criterios de Aceptación: 1. Given a patient, that this person can receive advice relevant to their mental state during the day.
+2. Given a patient, send notifications with daily advice.
+3. The patient can mark advice as ""helpful"" or ""not relevant"" to improve future personalization.",4.0,User Story,5.0,3,"La historia de usuario está bien definida y entrega valor directo al usuario final, en este caso, el paciente. Los criterios de aceptación son claros y estimables, aunque podrían beneficiarse de una mayor especificidad en cuanto a cómo se determina la relevancia del consejo y el mecanismo de personalización. Sin embargo, no hay omisiones significativas que impidan su implementación en un Sprint.",2.0
+4,Customizable views for psychiatrists...,"Customizable views for psychiatrists
+Historia: As a psychiatrist, I need to be able to select the amount of information to display about my patients in order to expedite the review of their case.
+Criterios de Aceptación: 1. Given a psychiatrist in the patient details view, this may hide a category in the patient summary.
+2. Given a psychiatrist in view of their patients, they will have a search bar to filter them.
+3. The psychiatrist can save custom view configurations for different patients and easily retrieve them.",4.0,User Story,4.0,5,"La historia de usuario está bien definida y proporciona un contexto claro sobre el valor que se entrega al usuario final (psiquiatras). Los criterios de aceptación son específicos y medibles, lo que permite estimar el esfuerzo necesario para su implementación. Sin embargo, podría beneficiarse de una mayor claridad en cuanto a las configuraciones de vista personalizadas y cómo se gestionan, lo que podría considerarse una omisión trivial.",-1.0
+5,Data entry via smartwatch...,"Data entry via smartwatch
+Historia: As a patient, I want the application to collect my biometric data from my smartwatch device to have a better understanding of my daily activities.
+Criterios de Aceptación: 1. The patient can choose whether to save their biometric data in the settings view, allowing them to select which data will be saved.
+2. The patient can use the data collected by the smartwatch to fill in the data in their emotional diaries.
+3. The app alerts the patient if the smartwatch data is not syncing correctly and offers instructions to correct it.",4.0,User Story,8.0,5,"La historia de usuario está bien definida y proporciona un valor claro al usuario final (el paciente) al permitir la recolección de datos biométricos. Los criterios de aceptación son claros y estimables, aunque podrían beneficiarse de una mayor especificidad en cuanto a los tipos de datos biométricos y el proceso de sincronización. Sin embargo, hay omisiones triviales que podrían ser refinadas para mejorar la claridad y la mitigación de riesgos.",3.0
+6,dream entry...,"dream entry
+Historia: As a patient, I also want to have the option to conveniently add sleep hours, either automatically or manually, according to my preferences.
+Criterios de Aceptación: 1. The patient can choose how to save their sleep hours in the app in the settings view.
+2. The patient will be able to manually enter their sleep hours by entering an emotional diary
+3. The application displays a weekly summary of sleep entered automatically or manually, including average hours and perceived quality.",4.0,User Story,5.0,5,"La historia de usuario está bien definida y proporciona un valor claro para el usuario final (paciente) al permitirle registrar sus horas de sueño. Los criterios de aceptación son claros y estimables, aunque podrían beneficiarse de una mayor especificidad en cuanto a la interfaz de usuario y el formato de entrada del diario emocional. No hay omisiones significativas, pero se podría mejorar la claridad sobre cómo se integran las entradas automáticas y manuales en el resumen semanal.",0.0
+7,Emotional diary improvement...,"Emotional diary improvement
+Historia: As a psychiatrist, I want the emotional diary to have more ways to measure different states, in order to better monitor the patient.
+Criterios de Aceptación: 1. Instead of buttons for emotions, the patient will use sliders to specify the level of intensity in certain emotions.
+2. The patient will have to answer short questions related to their routine.
+3. The patient will have a space to keep track of their medications so they can update them daily.",4.0,User Story,7.0,5,"El PBI presenta una historia de usuario clara que entrega valor directo a un usuario final (el psiquiatra) al mejorar la funcionalidad del diario emocional. Los criterios de aceptación son específicos y estimables, aunque podrían beneficiarse de una mayor claridad en la implementación de las preguntas cortas y el seguimiento de medicamentos. No hay omisiones críticas, pero se podría mejorar la descripción del impacto esperado en la experiencia del usuario.",2.0
+8,Mobile interface improvement...,"Mobile interface improvement
+Historia: As a patient, I want the user interface to be easy to navigate and make sense according to its uses.
+Criterios de Aceptación: 1. The patient will be able to access the Secure Plan from the main window of the application.
+2. The patient will be able to access forms and emotional diaries with the fewest clicks.
+3. The interface dynamically adapts to different screen sizes and device orientations.",4.0,User Story,4.0,5,"La historia de usuario está bien definida y proporciona un contexto claro sobre el valor que se entrega al usuario final (paciente). Los criterios de aceptación son específicos y medibles, lo que permite estimar el esfuerzo necesario para implementarlos. Sin embargo, podría beneficiarse de una mayor claridad en cuanto a la priorización de los criterios y la inclusión de métricas de éxito para evaluar la mejora de la interfaz, lo que la hace un poco menos que perfecta.",-1.0
+9,Improved form interface...,"Improved form interface
+Historia: As a user, I want the form interface to be comfortable for me to use, so that it is not difficult or overwhelming to complete them when given.
+Criterios de Aceptación: 1. The psychiatrist will be able to group the forms according to type.
+2. The psychiatrist will be able to filter forms according to a parameter of convenience.
+3. The forms have real-time validation to alert the patient if there are incomplete or incorrect fields before submitting them.",4.0,User Story,4.0,3,"La historia de usuario presenta un objetivo claro y entrega valor directo al usuario final, cumpliendo con el principio de 'User Story'. Los criterios de aceptación son específicos y medibles, lo que permite estimar el esfuerzo necesario para su implementación. Sin embargo, hay una omisión trivial en la descripción del contexto del usuario y cómo se medirá la 'conveniencia' en el filtrado de formularios, lo que podría mejorar la claridad y comprensión del PBI.",1.0
+10,Predictive AI improvement...,"Predictive AI improvement
+Historia: As a psychiatrist, I hope that the changes applied to the application will improve the results obtained from the predictive AI.
+Criterios de Aceptación: 1. The AI ​​will consider the changes and new fields added to the emotional diary interface and will consider the data over several days.
+2. The psychiatrist can see a history of their patients' previous consultations
+3. The psychiatrist will be able to configure the time that the AI ​​considers for the evaluation of the patient and their emotional diaries.",4.0,User Story,8.0,5,"La historia de usuario presenta un objetivo claro y un valor de negocio directo para el usuario final (el psiquiatra). Los criterios de aceptación son específicos y medibles, lo que permite estimar el esfuerzo necesario para su implementación. Sin embargo, hay omisiones triviales en cuanto a la definición de cómo se medirán los 'resultados obtenidos' de la IA y el impacto esperado de los cambios en el diario emocional. Esto podría requerir un refinamiento adicional para abordar completamente el contexto sistémico y los riesgos asociados.",3.0
+SPIKE 2,AI research and refinement...,"AI research and refinement
+Historia: Study related to different AI technologies to see their possible use in the application
+Criterios de Aceptación: 1. Research on the creation of chatbots that are sensitive enough to handle basic mental health conversations.
+2. Research on the security and privacy requirements for the use of these technologies.
+3. Research on the various consequences that chatbots have on people's mental health.",4.0,Spike,10.0,3,"El PBI está claramente definido como una tarea de investigación (Spike) que busca explorar diferentes tecnologías de IA y su aplicación en el contexto de la salud mental. Los criterios de aceptación son claros y específicos, lo que permite estimar el esfuerzo requerido. Sin embargo, aunque se abordan aspectos importantes como la creación de chatbots y los requisitos de seguridad, podría beneficiarse de un mayor contexto sobre cómo se evaluarán los resultados de la investigación y qué métricas se utilizarán para medir el éxito. Esto lo hace un poco menos que perfecto, pero aún así es un buen PBI.",7.0
+999,Time Spent on Marketing...,"Time Spent on Marketing
+Historia: 
+Criterios de Aceptación: ",2.0,User Story,0.0,5,"El PBI presenta ambigüedad severa, ya que no proporciona información suficiente sobre el contexto, el impacto esperado o el comportamiento deseado. La falta de criterios de aceptación claros impide la estimación y comprensión del trabajo requerido. No se define cómo se medirá el tiempo gastado en marketing ni qué se espera lograr con esta historia.",-5.0
+888,Time spent on Front End aside...,"Time spent on Front End aside
+Historia: 
+Criterios de Aceptación: ",2.0,Technical Task,0.0,5,"El PBI presenta ambigüedad severa, ya que no se especifica claramente qué se entiende por 'Time spent on Front End aside'. No se definen criterios de aceptación, lo que impide entender el impacto o comportamiento esperado. Además, no se proporciona contexto sobre el objetivo o la necesidad detrás de esta tarea, lo que dificulta su estimación y priorización.",-5.0
+777,Time spent in client meetings...,"Time spent in client meetings
+Historia: 
+Criterios de Aceptación: ",2.0,Technical Task,0.0,5,"El PBI presenta ambigüedad severa, ya que no se especifica claramente el objetivo o el resultado esperado de la tarea. La falta de criterios de aceptación definidos impide entender cómo se medirá el éxito de la actividad. Además, no se proporciona contexto sobre el impacto o el comportamiento esperado, lo que dificulta su estimación y ejecución.",-5.0
+666,Time spent on backend aside...,"Time spent on backend aside
+Historia: 
+Criterios de Aceptación: ",2.0,Technical Task,,5,"El PBI presenta ambigüedad severa, ya que no proporciona información clara sobre el trabajo a realizar en el backend. No se especifican los criterios de aceptación, lo que dificulta la estimación y comprensión del impacto esperado. Además, la falta de contexto sobre el tiempo dedicado al backend sugiere que se agrupan múltiples flujos sin definir claramente el objetivo o el resultado esperado.",
