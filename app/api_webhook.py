@@ -102,13 +102,31 @@ class GitLabPayload(BaseModel):
 @app.post("/webhook/gitlab-mr-merged")
 async def gitlab_listener(payload: GitLabPayload):
     try:
-        # 1. Analizar la Realidad vs La Predicción
-        # Regla heurística simple: 1 SP no debería tomar más de 1.5 a 2 días reales.
-        tiempo_esperado_maximo = payload.estimacion_original_sp * 2.0
+        # 1. Analizar la Realidad vs La Predicción (Basado en Cohortes Estadísticas)
+        # En la PoC, simulamos la media histórica de Lead Time (en días) para cada cohorte de Story Points.
+        # En producción, esto se calcula dinámicamente haciendo un query al propio mlops_telemetry.csv
+        medias_historicas_lead_time = {
+            1: 1.5,   # 1 SP históricamente toma 1.5 días de Lead Time
+            2: 2.5,
+            3: 4.0,
+            5: 7.0,
+            8: 11.0,
+            13: 18.0,
+            21: 28.0
+        }
         
-        # 2. Detectar Shock Episódico (¿Tomó ridículamente más tiempo del estimado?)
+        # Extraemos la media de la cohorte correspondiente, o usamos una heurística de fallback
+        lead_time_promedio_cohorte = medias_historicas_lead_time.get(
+            payload.estimacion_original_sp, 
+            payload.estimacion_original_sp * 1.5
+        )
+        
+        # 2. Detectar Shock Episódico (Umbral de Desviación)
+        # Se declara "Shock" si el tiempo real excede la media histórica en más de un 50% (Margen Crítico)
+        umbral_critico = lead_time_promedio_cohorte * 1.5 
+        
         shock_detectado = False
-        if payload.lead_time_days > tiempo_esperado_maximo:
+        if payload.lead_time_days > umbral_critico:
             shock_detectado = True
             
         # 3. Guardar telemetría para el futuro reentrenamiento de LightGBM
