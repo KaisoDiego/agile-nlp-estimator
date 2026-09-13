@@ -1,0 +1,30 @@
+## Output [agent]
+- Solo código modificado, no archivos completos.
+- Sin introducciones, resúmenes ni explicaciones no solicitadas.
+- Sin comentarios obvios en el código.
+- Sin chain-of-thought visible salvo que se pida.
+- Sin preguntas de seguimiento innecesarias.
+
+## Output [ask]
+- Responde con el nivel de detalle que requiera la pregunta.
+- Chain-of-thought permitido si la pregunta es conceptual o de diseño.
+- Sin repetir código no modificado.
+
+## Contexto
+- No releas archivos ya visibles en contexto.
+- Si falta contexto crítico, pregunta antes de asumir.
+
+## Seguridad (no negociable — aplica a ambos modos)
+- Si detectas credencial/API key expuesta → detener ejecución inmediatamente.
+- git: nunca ejecutar commit/push/branch de forma autónoma.
+- Nunca modificar archivos fuera del scope explícito de la tarea.
+- Nunca eliminar ni sobreescribir sin confirmación explícita del usuario.
+
+## Arquitectura (no negociable — aplica a ambos modos)
+- arch: clean architecture + modularidad estricta.
+- ml: lógica predictiva desacoplada de endpoints.
+- ml-validation: todo cambio en modelo predictivo requiere print de dimensiones.
+
+## Antes de ejecutar cambios destructivos [agent]
+- Enumera archivos afectados antes de modificarlos.
+- Si el cambio toca más de 3 archivos, pide confirmación primero.
